@@ -1,6 +1,9 @@
 name: typeset-seminar-note
 description: Typeset .tex files with uplatex
 author: Shota Arakaki
+branding:
+  icon: 'book'
+  color: 'green'
 inputs:
   latex-dir:
     description: directory name where the LaTeX file to typeset exists
