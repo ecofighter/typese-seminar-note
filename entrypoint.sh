@@ -11,7 +11,10 @@ if [[ ! -f $latex_filename ]]; then
     echo "${latex_filename} not found" >&2;
     exit 1;
 fi
-if cluttex --max-iterations "${max_iterations}" -e uplatex --jobname "${jobname}" "${latex_filename}"; then
+
+cluttex --max-iterations "${max_iterations}" -e uplatex --jobname "${jobname}" "${latex_filename}"
+result=$?
+if $result; then
     echo "cluttex failed" >&2;
     exit 1;
 fi
