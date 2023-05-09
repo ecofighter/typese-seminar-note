@@ -1,0 +1,29 @@
+name: typeset-seminar-note
+description: Typeset .tex files with uplatex
+author: Shota Arakaki
+inputs:
+  latex-dir:
+    description: directory name where the LaTeX file to typeset exists
+    required: True
+  latex-filename:
+    description: name of the LaTeX file to typeset
+    required: True
+  jobname:
+    description: name of the PDF file
+    required: True
+  outdir:
+    description: directory to put the PDF file
+    required: True
+  max-iterations:
+    description: number of max iterations to run latex
+    required: False
+    default: 3
+runs:
+  using: docker
+  image: ./Dockerfile
+  args:
+    - ${{ inputs.latex-dir }}
+    - ${{ inputs.latex-filename }}
+    - ${{ inputs.jobname }}
+    - ${{ inputs.outdir }}
+    - ${{ inputs.max-iterations }}

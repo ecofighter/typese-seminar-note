@@ -1,0 +1,27 @@
+\RequirePackage{plautopatch}
+\documentclass[uplatex,dvipdfmx,article]{jlreq}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{mathtools}
+\numberwithin{equation}{section}
+\usepackage[dvipdfmx]{graphicx,color}
+\usepackage{xr-hyper}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{braket}
+
+\usepackage{subfiles}
+
+\title{テスト用ドキュメント}
+\author{試験 太郎}
+\date{2023年5月}
+
+\begin{document}
+\maketitle
+\subfile{sec1/sec1}
+\subfile{sec2/sec2}
+\end{document}
