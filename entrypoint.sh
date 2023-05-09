@@ -14,7 +14,7 @@ fi
 
 cluttex --max-iterations "${max_iterations}" -e uplatex --jobname "${jobname}" "${latex_filename}"
 result=$?
-if $result; then
+if [[ $result -ne 0 ]]; then
     echo "cluttex failed" >&2;
     exit 1;
 fi
